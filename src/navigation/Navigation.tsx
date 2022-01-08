@@ -1,19 +1,31 @@
 import React from 'react';
 
-import { NavigationContainer } from '@react-navigation/native';
-import { Text, View } from 'react-native';
+import {
+  NavigationContainer,
+  DefaultTheme,
+  DarkTheme,
+} from '@react-navigation/native';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { TodayScreen, TomorrowScreen, WeekScreen } from '../screens';
+import useThemContext from '../context/ThemeContext/ThemeContext';
+
+const Tab = createMaterialTopTabNavigator();
 
 function SampleApp() {
   return (
-    <View>
-      <Text>Sample App</Text>
-    </View>
+    <Tab.Navigator>
+      <Tab.Screen name="Today" component={TodayScreen} />
+      <Tab.Screen name="Tomorrow" component={TomorrowScreen} />
+      <Tab.Screen name="Week" component={WeekScreen} />
+    </Tab.Navigator>
   );
 }
 
 function Navigation() {
+  const { isDark } = useThemContext();
+
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={isDark ? DarkTheme : DefaultTheme}>
       <SampleApp />
     </NavigationContainer>
   );
