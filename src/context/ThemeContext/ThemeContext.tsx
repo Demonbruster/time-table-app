@@ -26,8 +26,17 @@ export const ThemeProvider = ({
 
 const useThemeProvider = () => {
   const [state, dispatch] = useReducer(ThemeReducer, initialState);
-  const isDark = useColorScheme() === 'dark';
+
+  const isDarkFromScheme = useColorScheme() === 'dark';
+
+  React.useEffect(() => {
+    setTheme(isDarkFromScheme);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const { isDark } = state;
   const setTheme = (x: boolean) => {
+    console.log('setTheme', x);
     dispatch({
       type: 'SET_THEME',
       payload: x,

@@ -13,8 +13,10 @@ export default function ThemeReducer(
   action: IThemeAction,
 ) {
   switch (action.type) {
-    case 'SET_THEME':
+    case 'SET_THEME': {
+      console.log('SET_THEME', action.payload);
       return { ...state, isDark: action.payload };
+    }
 
     default:
       return state;

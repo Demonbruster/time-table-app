@@ -8,16 +8,20 @@ import {
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { TodayScreen, TomorrowScreen, WeekScreen } from '../screens';
 import useThemContext from '../context/ThemeContext/ThemeContext';
+import Header from '../container/Header';
 
 const Tab = createMaterialTopTabNavigator();
 
-function SampleApp() {
+function TabBar() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Today" component={TodayScreen} />
-      <Tab.Screen name="Tomorrow" component={TomorrowScreen} />
-      <Tab.Screen name="Week" component={WeekScreen} />
-    </Tab.Navigator>
+    <>
+      <Header />
+      <Tab.Navigator>
+        <Tab.Screen name="Today" component={TodayScreen} />
+        <Tab.Screen name="Tomorrow" component={TomorrowScreen} />
+        <Tab.Screen name="Week" component={WeekScreen} />
+      </Tab.Navigator>
+    </>
   );
 }
 
@@ -26,7 +30,7 @@ function Navigation() {
 
   return (
     <NavigationContainer theme={isDark ? DarkTheme : DefaultTheme}>
-      <SampleApp />
+      <TabBar />
     </NavigationContainer>
   );
 }
