@@ -36,7 +36,6 @@ const useThemeProvider = () => {
 
   const { isDark } = state;
   const setTheme = (x: boolean) => {
-    console.log('setTheme', x);
     dispatch({
       type: 'SET_THEME',
       payload: x,

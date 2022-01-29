@@ -20,6 +20,8 @@ const getHeaderStyle = (props: any) =>
     switchContainer: {
       flex: 1,
       padding: 10,
+      paddingHorizontal: 20,
+      alignItems: 'flex-end',
     },
     title: {
       fontSize: 20,

@@ -14,7 +14,6 @@ export default function ThemeReducer(
 ) {
   switch (action.type) {
     case 'SET_THEME': {
-      console.log('SET_THEME', action.payload);
       return { ...state, isDark: action.payload };
     }
 
