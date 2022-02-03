@@ -8,6 +8,9 @@ const getGlobalStyles = (props: any) =>
       flex: 1,
       backgroundColor: props.colors.backgroundColor,
     },
+    defaultTextStyle: {
+      color: props.colors.text,
+    },
   });
 
 function useGlobalStyles() {

@@ -1,12 +1,13 @@
 import React from 'react';
-import { Text, SafeAreaView } from 'react-native';
+import { SafeAreaView } from 'react-native';
+import Text from '../components/Text';
 
 interface Props {}
 
 const Today = (_props: Props) => {
   return (
     <SafeAreaView>
-      <Text style={{ color: 'black' }}>I'm Today Screen</Text>
+      <Text>I'm Today Screen</Text>
     </SafeAreaView>
   );
 };
