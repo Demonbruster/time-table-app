@@ -11,6 +11,9 @@ const getGlobalStyles = (props: any) =>
     defaultTextStyle: {
       color: props.colors.text,
     },
+    buttonContainer: {
+      backgroundColor: props.colors.primary,
+    },
   });
 
 function useGlobalStyles() {

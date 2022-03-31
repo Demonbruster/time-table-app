@@ -9,5 +9,7 @@ export const getWeek = async () => {
   try {
     const week = await AsyncStorage.getItem('week');
     return week ? JSON.parse(week) : null;
-  } catch (error) {}
+  } catch (error) {
+    throw error;
+  }
 };

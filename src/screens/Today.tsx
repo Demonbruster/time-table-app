@@ -1,5 +1,6 @@
 import React from 'react';
 import { SafeAreaView, FlatList } from 'react-native';
+import FloatingButton from '../components/FloatingButton';
 import Card from '../container/Card/Card';
 
 const sampleData = [
@@ -29,11 +30,18 @@ const sampleData = [
   },
 ];
 
-interface Props {}
+interface Props {
+  navigation: any;
+}
 
 const Today = (_props: Props) => {
+  const handlePress = () => {
+    _props.navigation.navigate('DayScreen');
+  };
+
   return (
     <SafeAreaView>
+      <FloatingButton onPress={handlePress} />
       <FlatList
         data={sampleData}
         keyExtractor={item => item.key}
